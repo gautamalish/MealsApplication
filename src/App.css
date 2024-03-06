@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F1F9F8;
+}
+.img{
+    width: 30vh;
+}
+/* Meals Start*/
+.section-center{
+    display: grid;
+    justify-content: space-between;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+    margin-top: 1vh;
+    gap: 30px;
+    /* border: 2px solid red; */
+}
+.single-meal{
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 30vh;
+}
+.single-meal-footer{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.like-btn{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+.img{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.single-meal-footer>.title{
+    font-size: 20px;
+}
+.single-meal:hover{
+    box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.657);
+    transition: all 0.3s;
+}
+.like-btn:hover{
+    transform:translateY(-5px);
+    color: red;
+    transition: all 0.3s;
+}
+.loading-section{
+    margin: auto;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
+.no-meals{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25%;
+}
+@media all and (max-width:1000px){
+    .section-center{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media all and (max-width:770px){
+    .section-center{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media all and (max-width:479px){
+    .section-center{
+        grid-template-columns: 1fr;
+    }
+}
+/* Meals End */
+/* Search Start */
+.btn{
+    background-color: #083C80;
+    color: white;
+    padding: 8px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn-hipster{
+    background-color: #B2CDFA;
+    color: black;
+}
+.search-container>form{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2%;
+}
+.search-container>form>.form-input{
+    padding: 5px;
+    border-radius: 5px;
+    /* max-width: 60rem; */
+    width: 15rem;
+}
+::placeholder{
+    font-family: inherit;
+}
+/* Modal Start */
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.832);
+    display: grid;
+    place-items: center;
+    z-index: 100;
+}
+.modal-container{
+    background-color: white;
+    width: 50vw;
+    height: 80vh;
+    overflow: scroll;
+    border-radius: 8px;
+}
+.modal-img{
+    width: 50vw;
+    height: 40vh;
+}
+.modal-content>h4{
+    font-size: 20px;
+}
+.modal-content{
+    padding: 1rem;
+}
+.instruction-title{
+    /* font-weight: bold; */
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px 0px;
+}
+.modal-content>a{
+    display: block;
+    padding: 1rem 0px;
+}
+.modal-content>button{
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: crimson;
+    color: white;
+    width: 5rem;
+    font-size: 15px;
+}
+.modal-content>button:hover{
+    background-color: rgba(255, 0, 0, 0.847);
+    transition: all 0.3s;
+}
+.allContainer{
+    width: 80vw;
+    margin: auto;
+}
+/* Favourites */
+.favourites{
+    background-color: black;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+.favourites-container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 5px;
+    padding-top: 0;
+}
+.favourite-item{
+    display: flex;
+    /* border: 2px solid red; */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 7px;
+    width: 4rem;
+}
+.favourite-item>img{
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+.favourite-item>button{
+    padding: 3px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 255, 0.597);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.favourite-item>button:hover{
+    background-color: rgba(255, 0, 0, 0.798);
+    transition: all 0.3s;
+}
+.favourite-item>img:hover{
+    transform: scale(1.1);
+    transition: all 0.2s;
+}
+
+
