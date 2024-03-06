@@ -2,7 +2,7 @@ import { AppContext } from "../context"
 import { useContext } from "react"
 import React,{useState} from "react"
 export default function Search(){
-const {setSearchTerm,fetchRandomMeal}=useContext(AppContext)
+const {setSearchTerm,fetchRandomMeal,randomMeal}=useContext(AppContext)
 const [text,setText]=useState("")
 function handleChange(event){
     setText(event.target.value)
@@ -24,6 +24,7 @@ function handleRandomMeal(){
                 <input type="text" placeholder="type meal" className="form-input" onChange={handleChange} value={text}/>
                 <button type="submit" className="btn">Search</button>
                 <button type="button" className="btn btn-hipster" onClick={handleRandomMeal}>Surprise Me!</button>
+                {randomMeal && <button className=" btn reload" onClick={()=>window.location.reload()}>Back Home</button>}
             </form>
         </header>
     )

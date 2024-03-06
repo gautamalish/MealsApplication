@@ -15,7 +15,7 @@ function AppProvider({children}){
     const [showModal,setShowModal]=React.useState(false)
     const [selectedMeal,setSelectedMeal]=React.useState(null)
     const [favourites,setFavourites]=React.useState(JSON.parse(localStorage.getItem("favourites"))||[])
-
+    const [randomMeal,setRandomMeal]=React.useState(false)
     function addToFavourites(idMeal){
         console.log(idMeal)
         const meal=meals.find(item=>item.idMeal===idMeal)
@@ -60,6 +60,7 @@ function AppProvider({children}){
     }
     function fetchRandomMeal(){
         fetchMeals(randomMealUrl)
+        setRandomMeal(true)
     }
     function closeModal(){
         setShowModal(false)
@@ -71,7 +72,7 @@ function AppProvider({children}){
         if(!searchTerm) return
         fetchMeals(`${allMealsUrl}${searchTerm}`)
         },[searchTerm])
-    return <AppContext.Provider value={{meals,loading,setSearchTerm,fetchRandomMeal,showModal,selectedMeal,selectMeal,closeModal,addToFavourites,removeFromFavourites,favourites}}>
+    return <AppContext.Provider value={{meals,loading,setSearchTerm,fetchRandomMeal,showModal,selectedMeal,selectMeal,closeModal,addToFavourites,removeFromFavourites,favourites,randomMeal}}>
         {children}
     </AppContext.Provider>
 }
